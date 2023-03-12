@@ -14,8 +14,8 @@
         <th>Age</th>
         <th>Operations</th>
     </tr>
-    <c:forEach items="${listUser}" var="user">
-        <tr th:each="user : ${listUser}">
+    <c:forEach items="${users}" var="user">
+        <tr th:each="user : ${users}">
             <td th:text="${user.getName()}"></td>
             <td th:text="${user.getLastName()}"></td>
             <td th:text="${user.getAge()}"></td>

@@ -30,10 +30,10 @@ public class UserController {
         model.addAttribute("user", new User());
         return "createUser";
     }
-    @PostMapping("/createNewUser") //сохранение
+    @PostMapping("/") //сохранение
     public String save(@ModelAttribute("user") User theuser){
         userService.saveUser(theuser);
-        return "redirect:/";
+        return "redirect:/users";
     }
     @GetMapping("/editUser/{id}")//редактирование
     public String updateUser(@PathVariable("id") long id, Model model) {
@@ -43,12 +43,12 @@ public class UserController {
     @PostMapping("/updateUser")
     public String update(@ModelAttribute("update") User user) {
         userService.edit(user);
-        return "redirect:/";
+        return "redirect:/users";
     }
 
     @DeleteMapping("/deleteUser/{id}") //удаление
     public String deleteById(@PathVariable("id") Long id) {
         userService.delete(id);
-        return "redirect:/";
+        return "redirect:/users";
     }
 }
